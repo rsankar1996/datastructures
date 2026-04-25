@@ -1,0 +1,41 @@
+1. Linear data structure with FIFO mode of operation.
+
+init()
+------
+
+1. Allocate the memory for queue with size passed as argument.
+2. Initialize rear, front and size variables are zero.
+3. Initialize capacity variable as size allocated for memory.
+
+is_full()
+-----------
+
+1. Verify if (size == capacity)
+
+is_empty()
+---------------
+
+1. Verify if (size == 0)
+
+enqueue()
+---------------
+
+1. Confirm the queue is not full using is_full().
+2. Calculate the updated rear variable -> (front + size) % capacity.
+3. Add the element in the rear index of the array.
+4. Increment the size variable.
+
+dequeue()
+---------------
+
+1. Confirm the queue is not empty
+2. Read the data from front index of the memory.
+3. Increment the front index
+4. Re-adjust the front pointer using (front % capacity)
+
+show()
+----------
+
+1. Function to print all the queue element in order.
+2. Start from the front pointer
+3. Print all the elements until the size - (front + size) % capacity
