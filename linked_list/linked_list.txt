@@ -1,0 +1,16 @@
+
+struct list
+{
+	int data;
+	struct list * next;
+};
+
+init()
+------
+
+1. Returns the poiter to head of the list.
+2. Assign the data into head->data
+3. Assign head->next = NULL
+
+append()
+--------------
