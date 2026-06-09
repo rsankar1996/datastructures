@@ -1,5 +1,5 @@
-#ifndef _LINKED_LIST_H
-#define _LINKED_LIST_H
+#ifndef SLIST_H
+#define SLIST_H
 
 typedef struct list
 {
@@ -14,4 +14,4 @@ int remove_tail(list_t ** head);
 int add_pos(list_t ** head, int pos, int data);
 int remove_pos(list_t ** head, int pos);
 
-#endif /* _LINKED_LIST_H */
+#endif /* SLIST_H */

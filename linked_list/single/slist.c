@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "linked_list.h"
+#include "slist.h"
 
 int init(list_t ** head, int data)
 {

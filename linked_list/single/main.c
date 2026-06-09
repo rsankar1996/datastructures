@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "linked_list.h"
+#include "slist.h"
 
 int main()
 {
