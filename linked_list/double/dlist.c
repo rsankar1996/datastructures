@@ -122,3 +122,23 @@ int insert_at (dlist_t ** head, int index, int data)
 	return 0;
 }
 
+dlist_t * reverse (dlist_t ** head)
+{
+	dlist_t * curr = *head;
+	dlist_t * rev = NULL;
+	dlist_t * tmp = NULL;
+	
+	while (curr != NULL)
+	{
+		tmp = curr->next;
+		curr->next = curr->prev;
+		curr->prev = tmp;
+		
+		rev = curr;
+		curr = curr->prev;
+	}
+	
+	return rev;
+}
+
+
