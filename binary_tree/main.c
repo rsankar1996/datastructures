@@ -64,8 +64,8 @@ void post_order_trv (btree_t * root)
 	}
 	
 	post_order_trv(root->lchild);
-	printf("%d ", root->key);
 	post_order_trv(root->rchild);
+	printf("%d ", root->key);
 }
 
 /* 
@@ -76,41 +76,42 @@ Level order traversal
 int height(btree_t* root) 
 {
 	if (root == NULL)
-    	{
-    		return 0;
-    	}
+	{
+		return 0;
+	}
 
-    	int leftHeight = height(root->left);
-    	int rightHeight = height(root->right);
-    	
-    	return max(leftHeight,rightHeight) + 1;
+	int left_height = height(root->left);
+	int right_height = height(root->right);
+
+    	return max(left_height, right_height) + 1;
 }
 
 void print_given_level(btree_t* root, int level)
 {
-    	if (root == NULL)
-    	{
-    		return;
-    	}
-    	
-    	if (level > 1)
-    	{
-    		print_given_level (root->left, (level - 1));
-    		print_given_level (root->right, (level - 1));
-    	}
-    	else if (level == 1)
-    	{
-    		printf ("%d ", root->data);
-    	}
+	if (root == NULL)
+	{
+		return;
+	}
+
+	if (level > 1)
+	{
+		print_given_level (root->left, (level - 1));
+		print_given_level (root->right, (level - 1));
+	}
+	else if (level == 1)
+	{
+		printf ("%d ", root->data);
+	}
 }
 
 void level_order_traversal(btree_t* root)
 {
-    	int h = height(root);
-    	for (int i = 1; i <= h; i++)
-    	{
-        	print_given_level(root, i);
-    	}
+	int h = height(root);
+	
+	for (int i = 1; i <= h; i++)
+	{
+		print_given_level(root, i);
+	}
 }
 
 /* 
@@ -126,6 +127,5 @@ Level order traversal using queue
 
 int main()
 {
-
 	return 0;
 }
