@@ -4,6 +4,7 @@
 int main()
 {
 	list_t * head = NULL;
+	list_t * rev = NULL;
 	
 	if (0 == init(&head, 10))
 	{
@@ -31,6 +32,9 @@ int main()
 	printf("TST: Removing node at position 3\r\n");
 	remove_pos(&head, 3);
 	show(head);
+	
+	rev = reverse (head);
+	show(rev);
 
 	return 0;
 }

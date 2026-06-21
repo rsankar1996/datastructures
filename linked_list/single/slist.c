@@ -123,3 +123,21 @@ int remove_pos(list_t ** head, int pos)
 
 	return 0;
 }
+
+list_t * reverse (list_t * head)
+{
+	list_t * curr = head;
+	list_t * prev = NULL;
+	list_t * next = NULL;
+	
+	while (NULL != curr)
+	{
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
+	}
+	
+	return prev;
+}
+
