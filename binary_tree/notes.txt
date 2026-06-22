@@ -22,3 +22,76 @@ Operations in BST
 4. Traversals : The four common tree traversals are Inorder (Left, Root, Right) which gives nodes in sorted order 
      for a BST, Preorder (Root, Left, Right), Postorder (Left, Right, Root), and Level-order, which traverses the tree level 
      by level using a queue.
+
+Pre-order traversal in iterative method:
+----------------------------------------------------------
+
+1. Print the root node and push the node to stack
+2. check if the stack is empty
+3. pop the top node
+4. push the right subtree node
+5. push the left subtree node
+6. Move to step 2
+
+void preorder_iterative(struct Node *root)
+{
+	if (NULL == root)
+	{
+		return;
+	}
+	
+	printf("%d ", root->key);
+	push (root);
+	
+	while (false == is_empty(stack))
+	{
+		struct node  * node = pop ();
+		
+		printf("%d ", node->key);
+		
+		if (NULL != node->right)
+		{
+			push (&stack, node->right);
+		}
+		
+		if (NULL != node->left)
+		{
+			push (&stack, node->left);
+		}
+	}
+}
+
+In-order traversal
+--------------------------
+
+1. curr = root
+2. Run the loop until curr is NULL or stack is empty
+3. Push all the left side node into stack until NULL
+4. Pop the stack
+5. Print the node
+6. Move to the right side and repeat 2.
+
+void in_order_traversal (node * root)
+{
+	if (NULL == root)
+	{
+		return;
+	}
+	
+	node * curr = root;
+	
+	while ((NULL != curr) || (false == is_empty()))
+	{
+		while (NULL != curr)
+		{
+			push (curr);
+			curr = curr->left;
+		}
+		
+		curr = pop();
+		
+		printf("%d ", tmp->key);
+		
+		curr = curr->right;
+	}
+}
